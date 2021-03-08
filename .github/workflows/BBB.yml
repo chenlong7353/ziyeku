@@ -30,12 +30,12 @@
 
 
 
-name: 小乐
+name: 步步宝
 
 on:
   workflow_dispatch:
   schedule:
-     - cron: '0 0-15 * * *'
+     - cron: '*/20 0-23 * * *'
   watch:
     types: started
 jobs:
@@ -43,13 +43,13 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
-        XL_URL: ${{ secrets.XL_URL }}
-        XL_HEADER: ${{ secrets.XL_HEADER }}		
+        BBB_bububaoTOKEN: ${{ BBB_bububaoTOKEN }}
+        BBB_CASH: ${{ BBB_CASH }}		
         
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/aaa/bbb.git ~/bbb
+          git clone https://github.com/chenlong7353/ziyeku.git ~/ziyeku
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
@@ -57,13 +57,13 @@ jobs:
       - name: npm install
         if: env.XL_URL
         run: |
-          cd ~/bbb
+          cd ~/ziyeku
           git checkout ZIYE
           npm install
-      - name: '运行 【小乐】'
-        if: env.XL_URL
+      - name: '运行 【步步宝】'
+        if: env.BBB_bububaoTOKEN
         run: |
-          cd ~/bbb
+          cd ~/ziyeku
           node Task/xiaole.js
         env:
           
