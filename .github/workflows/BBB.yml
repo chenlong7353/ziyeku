@@ -64,7 +64,7 @@ jobs:
         if: env.BBB_bububaoTOKEN
         run: |
           cd ~/ziyeku
-          node Task/xiaole.js
+          node Task/bububao.js
         env:
           
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
