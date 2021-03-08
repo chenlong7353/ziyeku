@@ -1,4 +1,4 @@
-name: 悦动族
+name: 全民悦动
 
 on:
   workflow_dispatch:
@@ -28,7 +28,7 @@ jobs:
           cd ~/ziyeku
           git checkout ZIYE
           npm install
-      - name: '运行 【悦动族】'
+      - name: '运行 【全民悦动】'
         if: env.QMYD_CASH
         run: |
           cd ~/ziyeku
